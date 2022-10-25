@@ -59,7 +59,7 @@ const Home = () => {
       </Flex>
       }
       {paginatedData.length>0 ? <Countries countrie={paginatedData} />:<Flex justifyContent="center" alignItems="center" py="50px">
-        <Heading fon="25px">No data found</Heading>
+        <Heading fontSize="25px">No data found</Heading>
       </Flex> }
       <Pagination
       totalCount={data && data.length}
