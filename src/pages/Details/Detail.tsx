@@ -18,11 +18,11 @@ const Detail = () => {
   
     const {data,status,isLoading} = useQuery(['countries'],fetchCounty )
     const country= data ?data[0] : null
-    
-  if(isLoading){
-    return <DetailSkeleton />
-  }else if(data){
     return (
+      <>
+     { isLoading ? <DetailSkeleton /> :
+  data ?
+    
       <Box width={["95%","95%","90%"]} margin="auto" py={["20px","20px","35px"]}>
         <Back />
       {country ? (<Grid templateColumns={["repeat(1,1fr)","repeat(1,1fr)","repeat(2,1fr)"]} py={["50px","50px","70px"]} margin="auto">
@@ -69,8 +69,11 @@ const Detail = () => {
       }
       </Box>
      
-    )
+      : <div>Country not found</div>
   }
+      </>
+    )
+  
 }
 
 export default Detail
