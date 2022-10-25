@@ -25,8 +25,8 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://github.com/fakoredeDamilola/countries)
-- Live Site URL: [Add live site URL here](https://fako-countries-list.netlify.app/)
+- Solution URL: [github link](https://github.com/fakoredeDamilola/countries)
+- Live Site URL: [live link](https://fako-countries-list.netlify.app/)
 
 
 ### Built with
