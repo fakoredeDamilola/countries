@@ -1,4 +1,4 @@
-import { Box, Flex } from '@chakra-ui/react'
+import { Box, Flex, Heading } from '@chakra-ui/react'
 import React, { useEffect } from 'react'
 import FilterComponent from '../../components/filter/FilterComponent'
 import { useQuery } from '@tanstack/react-query'
@@ -32,12 +32,12 @@ const Home = () => {
 
   useEffect(()=>{
     if(data){
-      setPaginatedData(data.slice(0,20))
+      setPaginatedData(data.length>0 ?data?.slice(0,20):[])
     }
   },[data])
   const reShuffleData = (page:number) =>{
     setCurrentPage(page)
-    setPaginatedData(data &&data.slice(page*20,page*20+20))
+    setPaginatedData(data &&data?.slice(page*20,page*20+20))
   }
 
   return (
@@ -58,7 +58,9 @@ const Home = () => {
       }
       </Flex>
       }
-      {paginatedData && <Countries countrie={paginatedData} /> }
+      {paginatedData.length>0 ? <Countries countrie={paginatedData} />:<Flex justifyContent="center" alignItems="center" py="50px">
+        <Heading fon="25px">No data found</Heading>
+      </Flex> }
       <Pagination
       totalCount={data && data.length}
       pageSize={20}

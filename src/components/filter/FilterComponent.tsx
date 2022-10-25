@@ -20,7 +20,6 @@ const FilterComponent = ({filter,setFilter}:IFilter) => {
             width={["100%","100%","350px"]}
             height="45px"
             onChange={(e:any)=>setFilter((filter)=>({...filter,search:e.target.value}))}
-            background="#242F40"
             border="0"
             borderRadius="4px"
             boxShadow="3px 3px 3px #0a0823"
@@ -31,7 +30,7 @@ const FilterComponent = ({filter,setFilter}:IFilter) => {
     </Box>
           <Box mt={["35px","35px","0"]}>
           <Menu>
-  <MenuButton as={Button} width="180px" height="45px" background="#242F40" rightIcon={<ChevronDownIcon />}>
+  <MenuButton as={Button} width="180px" height="45px"  rightIcon={<ChevronDownIcon />}>
     {filter?.region ? filter.region : "Filter by Region"}
   </MenuButton>
   <MenuList>

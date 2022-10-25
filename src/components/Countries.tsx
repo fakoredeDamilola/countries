@@ -7,7 +7,7 @@ interface ICountries {
 }
 const Countries = ({countrie}:ICountries )=> {
   return (
-    <Flex justifyContent="space-between" wrap="wrap" width={["95%","95%","100%"]} margin="0 auto" bg="red">
+    <Flex justifyContent="space-between" wrap="wrap" width={["95%","95%","100%"]} margin="0 auto">
     {countrie?.map((country,index)=>{
       return <Country country={country} key={index}/>
     })
